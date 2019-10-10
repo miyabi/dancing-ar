@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="DancingAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdq-HA-LaD">
+                                <rect key="frame" x="20" y="44" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-wQ-dN4">
+                                <rect key="frame" x="18" y="69" width="309" height="31"/>
+                                <connections>
+                                    <action selector="scaleSliderValueDidChange:" destination="BV1-FR-VrT" eventType="valueChanged" id="L92-df-q1P"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occlusion" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypv-rq-smG">
+                                <rect key="frame" x="337" y="44" width="57" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Luo-J7-gO9">
+                                <rect key="frame" x="345" y="67" width="51" height="31"/>
+                                <connections>
+                                    <action selector="occlusionSwitchValueDidChange:" destination="BV1-FR-VrT" eventType="valueChanged" id="Mxl-I9-Y4l"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Luo-J7-gO9" firstAttribute="top" secondItem="ypv-rq-smG" secondAttribute="bottom" constant="8" id="2jz-sC-I9U"/>
+                            <constraint firstItem="fLs-wQ-dN4" firstAttribute="top" secondItem="vdq-HA-LaD" secondAttribute="bottom" constant="10" id="3pf-HH-Wo9"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="Luo-J7-gO9" secondAttribute="trailing" constant="20" id="Cwz-nQ-C6x"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="vdq-HA-LaD" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="20" id="LDe-rr-kyw"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="ypv-rq-smG" secondAttribute="trailing" constant="20" id="TOx-TE-VnW"/>
+                            <constraint firstItem="vdq-HA-LaD" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="U6w-OV-MoM"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
+                            <constraint firstItem="Luo-J7-gO9" firstAttribute="leading" secondItem="fLs-wQ-dN4" secondAttribute="trailing" constant="20" id="VwS-tG-y3W"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="ypv-rq-smG" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="i1r-B9-elh"/>
+                            <constraint firstItem="fLs-wQ-dN4" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="20" id="mMK-0h-wpQ"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2IM-bj-QLd" appends="YES" id="6IM-n9-9rj"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="occlusionSwitch" destination="Luo-J7-gO9" id="vFK-0t-Kpm"/>
+                        <outlet property="scaleLabel" destination="vdq-HA-LaD" id="ttR-Q9-G90"/>
+                        <outlet property="scaleSlider" destination="fLs-wQ-dN4" id="r7l-Lm-NTN"/>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2IM-bj-QLd">
+                    <connections>
+                        <action selector="screenDidTap:" destination="BV1-FR-VrT" id="Sxo-LR-3wr"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
