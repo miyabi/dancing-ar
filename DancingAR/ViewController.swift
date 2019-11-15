@@ -87,7 +87,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayView
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.planeDetection = [.horizontal]
         configuration.environmentTexturing = .automatic
         configuration.isLightEstimationEnabled = true
 
