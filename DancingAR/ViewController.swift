@@ -22,6 +22,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayView
     var coachingOverlayView: ARCoachingOverlayView!
     var ambientLightNode: SCNNode!
     var directionalLightNode: SCNNode!
+    
+    let objectOffset = SCNVector3Make(0.0, 0.001, 0.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,7 +160,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayView
         let newBaseNode = baseNode.clone()
 
         let scale = 1.7 * scaleSlider.value
-        newBaseNode.position = position
+        newBaseNode.position = SCNVector3Make(
+            position.x + objectOffset.x,
+            position.y + objectOffset.y,
+            position.z + objectOffset.z
+        )
         newBaseNode.scale = SCNVector3Make(scale, scale, scale)
         sceneView.scene.rootNode.addChildNode(newBaseNode)
     }
