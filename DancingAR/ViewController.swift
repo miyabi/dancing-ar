@@ -165,7 +165,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayView
         
         if sender.state == .ended {
             let location = sender.location(in: view)
-            guard let raycastQuery = sceneView.raycastQuery(from: location, allowing: .estimatedPlane, alignment: .any) else { return }
+            guard let raycastQuery = sceneView.raycastQuery(from: location, allowing: .estimatedPlane, alignment: .horizontal) else { return }
             guard let raycastResult = sceneView.session.raycast(raycastQuery).first else { return }
 
             let position = SCNVector3Make(
