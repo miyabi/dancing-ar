@@ -90,8 +90,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayView
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal]
-        configuration.environmentTexturing = .automatic
         configuration.isLightEstimationEnabled = true
+        configuration.environmentTexturing = .automatic
 
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
             if occlusionSwitch.isOn {
@@ -134,15 +134,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayView
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
-    }
-    
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        guard let lightEstimate = sceneView.session.currentFrame?.lightEstimate else { return }
-
-        ambientLightNode.light?.intensity = lightEstimate.ambientIntensity
-        ambientLightNode.light?.temperature = lightEstimate.ambientColorTemperature
-        directionalLightNode.light?.intensity = lightEstimate.ambientIntensity
-        directionalLightNode.light?.temperature = lightEstimate.ambientColorTemperature
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
